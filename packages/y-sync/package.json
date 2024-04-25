@@ -1,0 +1,48 @@
+{
+  "name": "@croatialu/y-sync",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Croatia Lu <wuli.croatia@foxmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/croatialu",
+  "homepage": "https://github.com/croatialu/yjs-sync#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/croatialu/yjs-sync.git"
+  },
+  "bugs": "https://github.com/croatialu/yjs-sync/issues",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "nr build --watch",
+    "build": "vite build",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "yjs": "^13.6.14"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}

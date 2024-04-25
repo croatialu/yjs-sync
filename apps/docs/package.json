@@ -1,0 +1,12 @@
+{
+  "name": "@croatialu/y-sync-docs",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@croatialu/y-vue": "workspace:*"
+  }
+}

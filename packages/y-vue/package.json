@@ -1,0 +1,63 @@
+{
+  "name": "@croatialu/y-vue",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Croatia Lu <wuli.croatia@foxmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/croatialu",
+  "homepage": "https://github.com/croatialu/yjs-sync#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/croatialu/yjs-sync.git"
+  },
+  "bugs": "https://github.com/croatialu/yjs-sync/issues",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "nr build --watch",
+    "build": "vite build",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@croatialu/y-sync": "workspace:*",
+    "immer": "^10.0.4"
+  },
+  "devDependencies": {
+    "vue": "^3.0.0",
+    "vue-demi": "latest",
+    "y-indexeddb": "^9.0.12",
+    "y-protocols": "^1.0.6",
+    "y-webrtc": "^10.3.0",
+    "y-websocket": "^2.0.2",
+    "yjs": "^13.6.14"
+  }
+}
