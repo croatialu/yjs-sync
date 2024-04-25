@@ -1,8 +1,3 @@
-import type { ComputedRef } from 'vue-demi'
-import { computed } from 'vue-demi'
-import type { Updater } from '../utils'
-import { isUpdater } from '../utils'
-import { useMap } from './useMap'
 import { useMapRef } from './useMapRef'
 
 const MAP_KEY = 'YJS_VUE___RECORD'
