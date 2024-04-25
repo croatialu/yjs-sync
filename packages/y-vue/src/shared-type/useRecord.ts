@@ -6,7 +6,7 @@ import { useMap } from './useMap'
 
 const MAP_KEY = 'YJS_VUE___RECORD'
 
-export function useRecord<T>(name: string): [ComputedRef<T | undefined>, (value: Updater<T | undefined>) => void] {
+export function useRecord<T>(name: string) {
   const [map, setMap] = useMap(MAP_KEY)
 
   const record = computed(() => {
@@ -22,5 +22,5 @@ export function useRecord<T>(name: string): [ComputedRef<T | undefined>, (value:
     })
   }
 
-  return [record, setRecord] as any
+  return [record, setRecord]
 }
