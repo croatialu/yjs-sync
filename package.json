@@ -10,13 +10,11 @@
     "clean": "rimraf packages/**/dist packages/**/dist node_modules",
     "dev": "turbo dev",
     "build": "turbo build",
+    "build:release": "turbo build --filter=\"!*docs\"",
     "lint": "turbo lint",
     "test": "turbo test",
     "type-check": "turbo type-check",
-    "docs:dev": "turbo docs:dev",
-    "docs:build": "turbo docs:build",
-    "docs:preview": "turbo docs:preview",
-    "release": "turbo release"
+    "build:docs": "turbo build --filter=\"*docs\""
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.15.0",
@@ -24,7 +22,6 @@
     "@changesets/cli": "^2.27.1",
     "@types/bun": "latest",
     "@unocss/eslint-plugin": "^0.59.3",
-    "changeset": "^0.2.6",
     "eslint": "^9.0.0",
     "eslint-plugin-format": "^0.1.1",
     "rimraf": "^5.0.5",

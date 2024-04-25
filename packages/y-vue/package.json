@@ -36,7 +36,8 @@
   "scripts": {
     "dev": "nr build --watch",
     "build": "vite build",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "lint": "eslint"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",

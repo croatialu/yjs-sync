@@ -21,16 +21,6 @@
       ]
     },
     "lint": {},
-    "test": {},
-    "docs:build": {
-      "outputs": [
-        ".vitepress/dist"
-      ],
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "docs:dev": {},
-    "docs:preview": {}
+    "test": {}
   }
 }

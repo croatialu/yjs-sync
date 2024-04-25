@@ -4,7 +4,7 @@ outline: deep
 
 # useWebRtc
 
-``` ts
+```ts
 import { useWebRtc } from 'yjs-vue'
 
 const provider = useWebRtc('counter-example-yjs-vue-cursor', {
