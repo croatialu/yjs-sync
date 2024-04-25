@@ -35,4 +35,5 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/croatialu/yjs-vue' },
     ],
   },
+  outDir: 'dist',
 })
