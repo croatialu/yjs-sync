@@ -15,8 +15,8 @@
     "test": "turbo test",
     "type-check": "turbo type-check",
     "build:docs": "turbo build --filter=\"*docs\"",
-    "prepublishOnly": "nr build:release",
-    "release": "changeset publish"
+    "release": "nr build:release && changeset publish",
+    "version-packages": "changeset version && nr lint"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.15.0",
