@@ -1,6 +1,7 @@
 {
   "name": "@croatialu/y-sync-docs",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
