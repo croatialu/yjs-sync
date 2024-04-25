@@ -1,5 +1,13 @@
 # @croatialu/y-vue
 
+## 0.0.2
+
+### Patch Changes
+
+- 265648a: test
+- Updated dependencies [265648a]
+  - @croatialu/y-sync@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
