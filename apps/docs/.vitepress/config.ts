@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'y-sync',
   description: 'A VitePress Site',
-  base: '/y-sync',
+  base: '/yjs-sync',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
