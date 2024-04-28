@@ -1,5 +1,13 @@
 # @croatialu/y-sync-docs
 
+## 0.0.4
+
+### Patch Changes
+
+- 5e154f7: split and update deps
+- Updated dependencies [5e154f7]
+  - @croatialu/y-vue@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
