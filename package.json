@@ -11,9 +11,9 @@
     "test": "turbo test",
     "type-check": "turbo type-check",
     "build:docs": "turbo build --filter=\"*docs\"",
-    "release": "nr build:release && changeset publish",
-    "version-packages": "changeset version && nr lint",
-    "changelog": "changeset version && (git diff --quiet || (git commit -am 'chore: update changelog' && git push --follow-tags))"
+    "release": "nr build:release && pnpm publish -r",
+    "changeset": "changeset",
+    "version-packages": "changeset version && nr lint"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.15.0",
