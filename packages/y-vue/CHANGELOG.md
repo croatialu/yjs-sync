@@ -1,5 +1,11 @@
 # @croatialu/y-vue
 
+## 0.0.3
+
+### Patch Changes
+
+- e838807: update release setting
+
 ## 0.0.2
 
 ### Patch Changes
