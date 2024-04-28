@@ -17,6 +17,16 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./provider/webrtc": {
+      "types": "./dist/provider/webrtc/index.d.ts",
+      "import": "./dist/provider/webrtc.js",
+      "require": "./dist/provider/webrtc.cjs"
+    },
+    "./provider/websocket": {
+      "types": "./dist/provider/websocket/index.d.ts",
+      "import": "./dist/provider/websocket.js",
+      "require": "./dist/provider/websocket.cjs"
     }
   },
   "main": "./dist/index.cjs",
@@ -59,6 +69,6 @@
     "y-protocols": "^1.0.6",
     "y-webrtc": "^10.3.0",
     "y-websocket": "^2.0.2",
-    "yjs": "^13.6.14"
+    "yjs": "^13.0.0"
   }
 }

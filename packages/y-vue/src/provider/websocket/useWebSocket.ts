@@ -1,6 +1,6 @@
 import { WebsocketProvider } from 'y-websocket'
 
-import { useDoc, useProviders } from '../doc'
+import { useDoc, useProviders } from '../../doc'
 
 export function useWebSocket(url: string, room: string): WebsocketProvider {
   const doc = useDoc()

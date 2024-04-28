@@ -3,7 +3,7 @@ import { WebrtcProvider } from 'y-webrtc'
 
 import type { ComputedRef, MaybeRef } from 'vue-demi'
 import { computed, shallowRef, toValue, watch } from 'vue-demi'
-import { useDoc, useProviders } from './../doc'
+import { useDoc, useProviders } from '../../doc'
 
 export function useWebRtc(
   _room: MaybeRef<string | undefined>,

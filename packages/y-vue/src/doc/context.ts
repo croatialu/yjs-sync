@@ -1,6 +1,6 @@
 import type * as Y from 'yjs'
 import { inject, provide } from 'vue-demi'
-import type { Provider } from './types'
+import type { Provider } from '../types'
 
 const YJS_VUE_IDENTIFIER = 'YJS_VUE'
 

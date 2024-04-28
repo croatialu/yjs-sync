@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useArray, useWebRtc } from '@croatialu/y-vue'
+import { useArray } from '@croatialu/y-vue'
+import { useWebRtc } from '@croatialu/y-vue/provider/webrtc'
 
 useWebRtc('counter-example-yjs-vue-simple-list', {
   signaling: ['wss://yjs-server.cccboy.com'],

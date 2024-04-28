@@ -1,8 +1,8 @@
 import * as Y from 'yjs'
 import type { PropType } from 'vue-demi'
 import { defineComponent, onUnmounted, toRefs, watchEffect } from 'vue-demi'
+import type { Provider } from '../types'
 import { useDoc } from './useDoc'
-import type { Provider } from './types'
 import { provideDocumentContext } from './context'
 
 export const DocumentProvider = defineComponent({

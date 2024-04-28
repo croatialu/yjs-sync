@@ -5,7 +5,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        index: 'src/index.ts',
+        'index': 'src/index.ts',
+        'provider/webrtc': 'src/provider/webrtc/index.ts',
+        'provider/websocket': 'src/provider/websocket/index.ts',
       },
       formats: ['es', 'cjs'],
     },

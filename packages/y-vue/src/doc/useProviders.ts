@@ -1,5 +1,5 @@
+import type { Provider } from '../types'
 import { useDocumentContext } from './context'
-import type { Provider } from './types'
 
 export function useProviders(): Map<new (...args: any) => Provider, Map<string, Provider>> {
   const { providers } = useDocumentContext()

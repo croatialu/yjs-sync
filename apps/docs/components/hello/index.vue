@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useRecord, useWebRtc } from '@croatialu/y-vue'
+import { useRecord } from '@croatialu/y-vue'
+import { useWebRtc } from '@croatialu/y-vue/provider/webrtc'
 
 useWebRtc('counter-example-yjs-vue-hello', {
   signaling: ['wss://yjs-server.cccboy.com'],

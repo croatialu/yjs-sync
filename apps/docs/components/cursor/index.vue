@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useAwareness, useWebRtc } from '@croatialu/y-vue'
+import { useWebRtc } from '@croatialu/y-vue/provider/webrtc'
+import { useAwareness } from '@croatialu/y-vue'
 
 const provider = useWebRtc('counter-example-yjs-vue-cursor', {
   signaling: ['wss://yjs-server.cccboy.com'],
