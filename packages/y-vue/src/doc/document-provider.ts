@@ -1,8 +1,6 @@
 import * as Y from 'yjs'
 import type { PropType } from 'vue-demi'
-import { defineComponent, onUnmounted, toRefs, watchEffect } from 'vue-demi'
-import type { Provider } from '../types'
-import { useDoc } from './useDoc'
+import { computed, defineComponent, onUnmounted } from 'vue-demi'
 import { provideDocumentContext } from './context'
 
 export const DocumentProvider = defineComponent({
@@ -11,47 +9,23 @@ export const DocumentProvider = defineComponent({
       type: Object as PropType<Y.Doc>,
       default: () => new Y.Doc(),
     },
-    folderName: {
-      type: String,
-    },
-    documentName: {
+    scope: {
       type: String,
     },
   },
-  setup(props, ctx) {
-    const { folderName, documentName, doc } = toRefs(props)
-    let superDoc: Y.Doc | null
-
-    try {
-      superDoc = useDoc()
-    }
-    catch {}
-
-    watchEffect(() => {
-      if (!superDoc)
-        return
-
-      superDoc.getMap(folderName.value ?? '').set(
-        documentName.value ?? doc.value?.guid ?? '',
-        doc.value,
-      )
+  setup(props, { slots }) {
+    const ctx = provideDocumentContext({
+      doc: computed(() => props.doc),
     })
 
-    const providers = new Map<new (...args: any[]) => Provider, Map<string, Provider>>()
-
     onUnmounted(() => {
-      providers.forEach((map) => {
+      ctx.providers.forEach((map) => {
         map.forEach(provider => provider.destroy())
       })
     })
 
-    provideDocumentContext({
-      doc: doc.value,
-      providers,
-    })
-
     return () => {
-      return ctx.slots.default?.()
+      return slots.default?.()
     }
   },
 })

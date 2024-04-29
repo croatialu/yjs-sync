@@ -1,5 +1,5 @@
 import * as Y from 'yjs'
-import { computed, onUnmounted, watch } from 'vue-demi'
+import { computed, watch, watchEffect } from 'vue-demi'
 import { patchSharedType, patchState } from '@croatialu/y-sync'
 import { useDoc } from '../doc'
 import { useImmer } from '../composable/useImmer'
@@ -15,24 +15,26 @@ export function useArray<T = any>(name: string) {
   const arrayObserver = () => {
     const result = patchState(
       deepClone(state.value),
-      array.toJSON(),
+      array.value.toJSON(),
     )
     setState(result)
   }
 
   watch(state, (v) => {
-    doc.transact(() => {
+    doc.value.transact(() => {
       patchSharedType(
-        array,
+        array.value,
         v,
       )
     })
   })
 
-  array.observeDeep(arrayObserver)
+  watchEffect(() => {
+    array.value.observeDeep(arrayObserver)
 
-  onUnmounted(() => {
-    array.unobserve(arrayObserver)
+    return () => {
+      array.value.unobserve(arrayObserver)
+    }
   })
 
   return [computed(() => state.value), setState] as const

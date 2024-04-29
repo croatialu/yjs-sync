@@ -6,7 +6,7 @@ useWebRtc('counter-example-yjs-vue-hello', {
   signaling: ['wss://yjs-server.cccboy.com'],
 })
 
-const [name, setName] = useRecord('SHARED_NAME')
+const [name, setName] = useRecord<string>('SHARED_NAME')
 </script>
 
 <template>

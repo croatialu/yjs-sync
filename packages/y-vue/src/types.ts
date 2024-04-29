@@ -6,3 +6,11 @@ export type Provider =
   | WebrtcProvider
   | WebsocketProvider
   | IndexeddbPersistence
+
+export type ProviderConstructor = new (...args: any[]) => Provider
+
+export enum ProviderType {
+  Websocket = 'WEBSOCKET',
+  Webrtc = 'WEBRTC',
+  Indexeddb = 'INDEXEDDB',
+}

@@ -16,9 +16,13 @@ export default defineConfig({
       {
         text: 'Vue API',
         items: [
-          { text: 'useMap', link: '/api/useMap' },
-          { text: 'useArray', link: '/api/useArray' },
-          { text: 'useWebRtc', link: '/api/useWebRtc' },
+          { text: 'useMap', link: '/api/vue/useMap' },
+          { text: 'useMapRef', link: '/api/vue/useMapRef' },
+          { text: 'useRecord', link: '/api/vue/useRecord' },
+          { text: 'useRecordRef', link: '/api/vue/useRecordRef' },
+          { text: 'useArray', link: '/api/vue/useArray' },
+          { text: 'useArrayRef', link: '/api/vue/useArrayRef' },
+          { text: 'useWebRtc', link: '/api/vue/useWebRtc' },
         ],
       },
       {

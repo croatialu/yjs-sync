@@ -16,5 +16,5 @@ export function useRecordRef<T>(name: string) {
     })
   }
 
-  return [getState, updateState]
+  return [getState, updateState] as const
 }
