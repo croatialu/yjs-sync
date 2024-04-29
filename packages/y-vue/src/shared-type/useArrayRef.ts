@@ -9,7 +9,7 @@ export function useArrayRef<T = any>(name: string) {
     return array.toJSON() as T[]
   }
 
-  const updateState = (value: T) => {
+  const updateState = (value: T[]) => {
     patchSharedType(array, value)
   }
 
