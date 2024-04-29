@@ -1,31 +1,52 @@
 import { WebsocketProvider } from 'y-websocket'
 
-import { useDoc, useProviders } from '../../doc'
+import { type MaybeRef, computed, toValue, watch } from 'vue-demi'
+import { ProviderType, useDoc } from '../../doc'
+import { useProviders } from '../../doc/useProviders'
+import { createProviderKey } from '../../utils'
 
-export function useWebSocket(url: string, room: string): WebsocketProvider {
+export function useWebSocket(
+  _url: MaybeRef<string>,
+  _room: MaybeRef<string | undefined>,
+) {
   const doc = useDoc()
-  const providers = useProviders()
+  const { setProvider, removeProvider } = useProviders()
+  const room = computed(() => toValue(_room))
+  const url = computed(() => toValue(_url))
 
-  const existingProvider
-    = providers.get(WebsocketProvider)?.get(room) as WebsocketProvider | undefined
+  const provider = computed(() => {
+    if (!room.value || !url.value || !doc.value)
+      return
 
-  const createWebSocketProvider = () => {
-    const provider = new WebsocketProvider(
-      url,
-      room,
-      doc,
+    const p = new WebsocketProvider(
+      url.value,
+      room.value,
+      doc.value,
+    )
+    setProvider(
+      createProviderKey(ProviderType.Websocket, url.value),
+      room.value,
+      p,
     )
 
-    if (!(providers.has(WebsocketProvider)))
-      providers.set(WebsocketProvider, new Map())
+    return p
+  })
 
-    const old = providers.get(WebsocketProvider)?.get(room)
-    old?.destroy()
+  watch([room, url], (value, oldValue) => {
+    const [newRoom, newUrl] = value
+    const [oldRoom, oldUrl] = oldValue
 
-    providers.get(WebsocketProvider)?.set(room, provider)
+    if (
+      (!newRoom && oldRoom)
+      || (!newUrl && oldUrl)
+    ) {
+      // remove provider
+      removeProvider(
+        createProviderKey(ProviderType.Websocket, oldUrl),
+        oldRoom || '',
+      )
+    }
+  })
 
-    return provider
-  }
-
-  return existingProvider || createWebSocketProvider()
+  return provider
 }

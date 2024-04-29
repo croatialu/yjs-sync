@@ -21,5 +21,5 @@ export function useRecord<T>(name: string) {
     })
   }
 
-  return [record, setRecord]
+  return [record, setRecord] as const
 }

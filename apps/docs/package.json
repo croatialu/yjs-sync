@@ -4,7 +4,7 @@
   "version": "0.0.5",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev",
+    "dev": "vitepress dev --host",
     "build": "vitepress build",
     "type-check": "tsc --noEmit",
     "lint": "eslint",

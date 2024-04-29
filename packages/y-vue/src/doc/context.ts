@@ -1,17 +1,28 @@
-import type * as Y from 'yjs'
-import { inject, provide } from 'vue-demi'
+import * as Y from 'yjs'
+import type { MaybeRef, ShallowRef } from 'vue-demi'
+import { inject, isRef, provide, shallowRef } from 'vue-demi'
 import type { Provider } from '../types'
 
 const YJS_VUE_IDENTIFIER = 'YJS_VUE'
 
 interface DocumentContext {
-  doc: Y.Doc | null
-  providers: Map<new (...args: any[]) => Provider, Map<string, Provider>> | null
+  doc: ShallowRef<Y.Doc>
+  providers: Map<string, Map<string, Provider>>
 }
 
-export function provideDocumentContext(ctx: DocumentContext) {
+export function provideDocumentContext(payload?: { doc?: MaybeRef<Y.Doc> }) {
+  const { doc } = payload || {}
+  const realDoc = isRef(doc) ? doc.value : doc
+
+  const localDoc = shallowRef(realDoc || new Y.Doc())
+
+  const ctx = {
+    doc: localDoc,
+    providers: new Map(),
+  }
+
   provide(YJS_VUE_IDENTIFIER, ctx)
-  return ctx
+  return ctx as DocumentContext
 }
 
 export function useDocumentContext(): DocumentContext {

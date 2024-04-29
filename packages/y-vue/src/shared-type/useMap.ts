@@ -1,4 +1,4 @@
-import { computed, onUnmounted, watch } from 'vue-demi'
+import { computed, watch, watchEffect } from 'vue-demi'
 import * as Y from 'yjs'
 import { patchSharedType } from '@croatialu/y-sync'
 import { useDoc } from '../doc'
@@ -12,23 +12,26 @@ export function useMap<T = any>(name: string) {
 
   const [state, updateState] = useImmer<{
     [x: string]: T | undefined
-  }>(map.toJSON())
+  }>(map.value.toJSON())
 
   watch(state, (v) => {
-    doc.transact(() => {
-      patchSharedType(map, v)
+    doc.value.transact(() => {
+      patchSharedType(map.value, v)
     })
   })
 
   const mapObserver = () => {
     updateState(
-      deepClone(map.toJSON()),
+      deepClone(map.value.toJSON()),
     )
   }
 
-  map.observeDeep(mapObserver)
-  onUnmounted(() => {
-    map.unobserve(mapObserver)
+  watchEffect(() => {
+    map.value.observeDeep(mapObserver)
+
+    return () => {
+      map.value.unobserve(mapObserver)
+    }
   })
 
   return [computed(() => state.value), updateState] as const

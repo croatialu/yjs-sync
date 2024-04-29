@@ -6,11 +6,11 @@ export function useArrayRef<T = any>(name: string) {
   const array = useSharedType<Y.Array<T>>(name, Y.Array)
 
   const getState = () => {
-    return array.toJSON() as T[]
+    return array.value.toJSON() as T[]
   }
 
   const updateState = (value: T[]) => {
-    patchSharedType(array, value)
+    patchSharedType(array.value, value)
   }
 
   return [getState, updateState] as const
