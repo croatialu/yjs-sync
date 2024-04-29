@@ -1,5 +1,12 @@
 # @croatialu/y-sync-docs
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [8b1165e]
+  - @croatialu/y-vue@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
