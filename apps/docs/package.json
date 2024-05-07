@@ -1,5 +1,5 @@
 {
-  "name": "@croatialu/y-sync-docs",
+  "name": "docs",
   "type": "module",
   "version": "0.0.5",
   "private": true,

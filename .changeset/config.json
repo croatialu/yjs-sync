@@ -2,7 +2,9 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "croatialu/yjs-sync" }
+    {
+      "repo": "croatialu/yjs-sync"
+    }
   ],
   "commit": false,
   "fixed": [],
@@ -10,5 +12,7 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": [
+    "docs"
+  ]
 }
