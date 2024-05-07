@@ -1,7 +1,7 @@
 {
   "name": "@croatialu/y-vue",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "author": "Croatia Lu <wuli.croatia@foxmail.com>",
   "license": "MIT",
@@ -50,7 +50,7 @@
     "lint": "eslint"
   },
   "peerDependencies": {
-    "@croatialu/y-sync": "^0.0.3",
+    "@croatialu/y-sync": "^0.0.4",
     "@vue/composition-api": "^1.0.0-rc.1",
     "vue": "^2.0.0 || >=3.0.0"
   },
