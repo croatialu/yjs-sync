@@ -50,6 +50,7 @@
     "lint": "eslint"
   },
   "peerDependencies": {
+    "@croatialu/y-sync": "^0.0.3",
     "@vue/composition-api": "^1.0.0-rc.1",
     "vue": "^2.0.0 || >=3.0.0"
   },
@@ -59,10 +60,10 @@
     }
   },
   "dependencies": {
-    "@croatialu/y-sync": "workspace:*",
     "immer": "^10.0.4"
   },
   "devDependencies": {
+    "@croatialu/y-sync": "workspace:*",
     "vue": "^3.0.0",
     "vue-demi": "latest",
     "y-indexeddb": "^9.0.12",

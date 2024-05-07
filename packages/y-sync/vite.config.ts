@@ -9,6 +9,8 @@ export default defineConfig({
       },
       formats: ['es', 'cjs'],
     },
+    sourcemap: true,
+    minify: false,
     rollupOptions: {
       external: ['yjs'],
     },
