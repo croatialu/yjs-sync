@@ -15,7 +15,5 @@ export default defineConfig({
       external: ['yjs'],
     },
   },
-  plugins: [dts({
-    insertTypesEntry: true,
-  })],
+  plugins: [dts()],
 })
