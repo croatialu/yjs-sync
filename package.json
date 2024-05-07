@@ -15,7 +15,7 @@
     "test": "turbo test",
     "type-check": "turbo type-check",
     "build:docs": "turbo build --filter=\"*docs\"",
-    "release": "nr build:release && pnpm publish -r",
+    "release": "nr build:release && pnpm publish -r --no-git-checks",
     "changeset": "changeset",
     "version-packages": "changeset version && nr lint"
   },
