@@ -4,7 +4,8 @@ import { useArray } from '@croatialu/y-vue'
 import { useWebRtc } from '@croatialu/y-vue/provider/webrtc'
 
 useWebRtc('counter-example-yjs-vue-simple-list', {
-  signaling: ['wss://yjs-server.cccboy.com'],
+  // signaling: ['wss://yjs-server.cccboy.com'],
+  signaling: ['ws://10.10.20.238:3000/ws/panel'],
 })
 
 const [list, updateList] = useArray<{ name: string, id: string }>('state')
