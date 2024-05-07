@@ -18,6 +18,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.15.0",
     "@antfu/ni": "^0.21.12",
+    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
     "@unocss/eslint-plugin": "^0.59.3",
     "eslint": "^9.0.0",
