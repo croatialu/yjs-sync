@@ -1,5 +1,5 @@
 import type { MaybeRef, ShallowRef } from 'vue-demi'
-import { computed, onMounted, onUnmounted, shallowRef, toValue } from 'vue-demi'
+import { computed, shallowRef, toValue, watchEffect } from 'vue-demi'
 import type { Awareness } from 'y-protocols/awareness'
 
 export function useAwareness<T extends NonNullable<unknown> = { [x: string]: any }>(_awareness: MaybeRef<Awareness | undefined>) {
@@ -25,12 +25,11 @@ export function useAwareness<T extends NonNullable<unknown> = { [x: string]: any
     ) as Map<number, T>
   }
 
-  onMounted(() => {
+  watchEffect(() => {
     awareness.value?.on('change', forceUpdateOnAwarenessChange)
-  })
-
-  onUnmounted(() => {
-    awareness.value?.off('change', forceUpdateOnAwarenessChange)
+    return () => {
+      awareness.value?.off('change', forceUpdateOnAwarenessChange)
+    }
   })
 
   return {
