@@ -12,7 +12,7 @@
     "type-check": "turbo type-check",
     "build:docs": "turbo build --filter=\"*docs\"",
     "release": "nr build:release && pnpm publish -r --no-git-checks",
-    "changeset": "changeset && git add . && git commit -m \"chore: update changeset\"",
+    "changeset": "changeset && git add . && git commit -m \"chore: update changeset\" && git push",
     "version-packages": "changeset version && nr lint"
   },
   "devDependencies": {
