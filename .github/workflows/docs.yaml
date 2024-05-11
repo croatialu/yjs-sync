@@ -49,10 +49,10 @@ jobs:
             ${{ runner.os }}-turbo-tsc
 
       - name: Install
-        run: bun install
+        run: pnpm install
 
       - name: Build
-        run: bun run build:docs
+        run: pnpm run build:docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
