@@ -1,5 +1,11 @@
 # @croatialu/y-vue
 
+## 0.0.8
+
+### Patch Changes
+
+- [`fcbc883`](https://github.com/croatialu/yjs-sync/commit/fcbc88313d0de6b0dda0fc4f65b3b2833ed644db) Thanks [@croatialu](https://github.com/croatialu)! - fix awareness
+
 ## 0.0.7
 
 ### Patch Changes
